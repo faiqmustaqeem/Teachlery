@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+<array name="nav_item_activity_titles">
+    <item>"Dashborad"</item>
+    <item>"Bookings"</item>
+    <item>"Manage"</item>
+    <item>"Account"</item>
+    <item>"Leads"</item>
+    <item>"Courses"</item>
+    <item>"Dashborad"</item>
+    <item>"Courses Categories"</item>
+    <item>"Credit Conversion Request"</item>
+</array>
+
+
+</resources>
