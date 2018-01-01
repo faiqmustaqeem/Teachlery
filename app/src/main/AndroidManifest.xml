@@ -21,7 +21,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.AboutUsActivity" />
-        <activity android:name=".Activities.ContactUsActivity"></activity>
+        <activity android:name=".Activities.ContactUsActivity" />
+        <activity android:name=".Activities.BookingsActivity"
+
+            ></activity>
     </application>
 
 </manifest>

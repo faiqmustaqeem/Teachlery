@@ -1,6 +1,7 @@
 package com.codiansoft.teachlery.Activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
@@ -178,9 +179,9 @@ public class MainActivity extends AppCompatActivity
                 // dashboard
                 DashboardFragment dashboardFragment = new DashboardFragment();
                 return dashboardFragment;
-            case 1:
-                BookingsFragment bookingsFragment=new BookingsFragment();
-                return bookingsFragment;
+//            case 1:
+//                BookingsFragment bookingsFragment=new BookingsFragment();
+//                return bookingsFragment;
 //            case 2:
 //                // movies fragment
 //                MoviesFragment moviesFragment = new MoviesFragment();
@@ -223,9 +224,12 @@ public class MainActivity extends AppCompatActivity
 
                         break;
                     case R.id.nav_bookings:
-                        navItemIndex = 1;
-                        CURRENT_TAG = TAG_BOOKINGS;
-                        break;
+//                        navItemIndex = 1;
+//                        CURRENT_TAG = TAG_BOOKINGS;
+                        startActivity(new Intent(MainActivity.this,BookingsActivity.class));
+                        drawer.closeDrawers();
+                        return true;
+                       // break;
 //                    case R.id.nav_movies:
 //                        navItemIndex = 2;
 //                        CURRENT_TAG = TAG_MOVIES;
@@ -258,6 +262,7 @@ public class MainActivity extends AppCompatActivity
                 } else {
                     menuItem.setChecked(true);
                 }
+
                 menuItem.setChecked(true);
 
                 loadHomeFragment();
