@@ -18,7 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.codiansoft.teachlery.Fragments.BookingsFragment;
+
 import com.codiansoft.teachlery.Fragments.DashboardFragment;
 import com.codiansoft.teachlery.Fragments.SettingsFragment;
 import com.codiansoft.teachlery.R;
