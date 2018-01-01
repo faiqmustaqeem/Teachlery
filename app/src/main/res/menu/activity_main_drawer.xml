@@ -33,9 +33,7 @@
             android:id="@+id/nav_credit_conversion_request"
             android:title="Credit Conversion Request"/>
 
-        <item
-            android:id="@+id/nav_logout"
-            android:title="Logout"/>
+
 
     </group>
 

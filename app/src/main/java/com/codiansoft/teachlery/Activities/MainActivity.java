@@ -17,11 +17,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.codiansoft.teachlery.Fragments.BookingsFragment;
 import com.codiansoft.teachlery.Fragments.DashboardFragment;
+import com.codiansoft.teachlery.Fragments.SettingsFragment;
 import com.codiansoft.teachlery.R;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+         {
 
 
     private NavigationView navigationView;
@@ -81,7 +83,6 @@ public class MainActivity extends AppCompatActivity
 //        toggle.syncState();
 
          navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
 
         // load toolbar titles from string resources
         activityTitles = getResources().getStringArray(R.array.nav_item_activity_titles);
@@ -177,10 +178,9 @@ public class MainActivity extends AppCompatActivity
                 // dashboard
                 DashboardFragment dashboardFragment = new DashboardFragment();
                 return dashboardFragment;
-//            case 1:
-//                // photos
-//                PhotosFragment photosFragment = new PhotosFragment();
-//                return photosFragment;
+            case 1:
+                BookingsFragment bookingsFragment=new BookingsFragment();
+                return bookingsFragment;
 //            case 2:
 //                // movies fragment
 //                MoviesFragment moviesFragment = new MoviesFragment();
@@ -190,10 +190,10 @@ public class MainActivity extends AppCompatActivity
 //                NotificationsFragment notificationsFragment = new NotificationsFragment();
 //                return notificationsFragment;
 //
-//            case 4:
-//                // settings fragment
-//                SettingsFragment settingsFragment = new SettingsFragment();
-//                return settingsFragment;
+            case 4:
+                // settings fragment
+                SettingsFragment settingsFragment = new SettingsFragment();
+                return settingsFragment;
             default:
                 return new DashboardFragment();
         }
@@ -220,11 +220,12 @@ public class MainActivity extends AppCompatActivity
                     case R.id.nav_dashboard:
                         navItemIndex = 0;
                         CURRENT_TAG = TAG_DASHBOARD;
+
                         break;
-//                    case R.id.nav_photos:
-//                        navItemIndex = 1;
-//                        CURRENT_TAG = TAG_PHOTOS;
-//                        break;
+                    case R.id.nav_bookings:
+                        navItemIndex = 1;
+                        CURRENT_TAG = TAG_BOOKINGS;
+                        break;
 //                    case R.id.nav_movies:
 //                        navItemIndex = 2;
 //                        CURRENT_TAG = TAG_MOVIES;
@@ -233,10 +234,10 @@ public class MainActivity extends AppCompatActivity
 //                        navItemIndex = 3;
 //                        CURRENT_TAG = TAG_NOTIFICATIONS;
 //                        break;
-//                    case R.id.nav_settings:
-//                        navItemIndex = 4;
-//                        CURRENT_TAG = TAG_SETTINGS;
-//                        break;
+                    case R.id.nav_leads:
+                        navItemIndex = 4;
+                        CURRENT_TAG = TAG_LEADS;
+                        break;
 //                    case R.id.nav_about_us:
 //                        // launch new intent instead of loading fragment
 //                        startActivity(new Intent(MainActivity.this, AboutUsActivity.class));
@@ -333,48 +334,7 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
 
-        if (id == R.id.nav_dashboard) {
-            // Handle the camera action
-        }
-        else if (id == R.id.nav_bookings) {
-
-        }
-        else if (id == R.id.nav_manage) {
-
-        }
-        else if (id == R.id.nav_account) {
-
-        }
-        else if (id == R.id.nav_leads) {
-
-        }
-        else if (id == R.id.nav_courses) {
-
-        }
-        else if (id == R.id.nav_courses) {
-
-        }
-        else if (id == R.id.nav_course_categories) {
-
-        }
-        else if (id == R.id.nav_credit_conversion_request) {
-
-        }
-        else if(id == R.id.nav_logout)
-        {
-            activity.finish();
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
     // show or hide the fab
     private void toggleFab() {
         if (navItemIndex == 0)
