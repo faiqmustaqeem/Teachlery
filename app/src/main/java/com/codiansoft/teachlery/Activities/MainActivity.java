@@ -17,8 +17,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.FrameLayout;
 
 
+import com.codiansoft.teachlery.Fragments.BookingsFragment;
 import com.codiansoft.teachlery.Fragments.DashboardFragment;
 import com.codiansoft.teachlery.Fragments.SettingsFragment;
 import com.codiansoft.teachlery.R;
@@ -32,7 +35,8 @@ public class MainActivity extends AppCompatActivity
    // private View navHeader;
     //private ImageView imgNavHeaderBg, imgProfile;
    // private TextView txtName, txtWebsite;
-    private Toolbar toolbar;
+    public static Toolbar toolbar;
+//    public static EditText searchBar;
     private FloatingActionButton fab;
     // index to identify current nav menu item
     public static int navItemIndex = 0;
@@ -45,8 +49,10 @@ public class MainActivity extends AppCompatActivity
     private static final String TAG_LEADS = "leads";
     private static final String TAG_COURSES = "courses";
     private static final String TAG_COURSES_CATEGORIES = "courses categories";
-    private static final String CREDIT_CONVERSION_REQUEST = "credit conversion request";
+    private static final String TAG_CREDIT_CONVERSION_REQUEST = "credit conversion request";
+    private static final String TAG_SETTINGS = "settings";
 
+    public static FrameLayout frameLayout;
 
 
     public static String CURRENT_TAG = TAG_DASHBOARD;
@@ -63,12 +69,16 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         activity=this;
-         toolbar = (Toolbar) findViewById(R.id.toolbar);
+         toolbar =  findViewById(R.id.toolbar);
+        frameLayout=findViewById(R.id.searchLayout);
+
+//        searchBar=findViewById(R.id.searchBar);
+       // searchBar.setVisibility(View.GONE);
         setSupportActionBar(toolbar);
         mHandler = new Handler();
 
 
-        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab =  findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -179,26 +189,20 @@ public class MainActivity extends AppCompatActivity
                 // dashboard
                 DashboardFragment dashboardFragment = new DashboardFragment();
                 return dashboardFragment;
-//            case 1:
-//                BookingsFragment bookingsFragment=new BookingsFragment();
-//                return bookingsFragment;
-//            case 2:
-//                // movies fragment
-//                MoviesFragment moviesFragment = new MoviesFragment();
-//                return moviesFragment;
-//            case 3:
-//                // notifications fragment
-//                NotificationsFragment notificationsFragment = new NotificationsFragment();
-//                return notificationsFragment;
-//
-            case 4:
-                // settings fragment
+            case 1:
+                BookingsFragment bookingsFragment=new BookingsFragment();
+                return bookingsFragment;
+
+            case 8:
                 SettingsFragment settingsFragment = new SettingsFragment();
                 return settingsFragment;
+
             default:
                 return new DashboardFragment();
         }
+
     }
+
     private void setToolbarTitle() {
         getSupportActionBar().setTitle(activityTitles[navItemIndex]);
     }
@@ -221,15 +225,12 @@ public class MainActivity extends AppCompatActivity
                     case R.id.nav_dashboard:
                         navItemIndex = 0;
                         CURRENT_TAG = TAG_DASHBOARD;
-
                         break;
+
                     case R.id.nav_bookings:
-//                        navItemIndex = 1;
-//                        CURRENT_TAG = TAG_BOOKINGS;
-                        startActivity(new Intent(MainActivity.this,BookingsActivity.class));
-                        drawer.closeDrawers();
-                        return true;
-                       // break;
+                        navItemIndex = 1;
+                        CURRENT_TAG = TAG_BOOKINGS;
+                        break;
 //                    case R.id.nav_movies:
 //                        navItemIndex = 2;
 //                        CURRENT_TAG = TAG_MOVIES;
@@ -252,6 +253,10 @@ public class MainActivity extends AppCompatActivity
 //                        startActivity(new Intent(MainActivity.this, PrivacyPolicyActivity.class));
 //                        drawer.closeDrawers();
 //                        return true;
+                    case R.id.nav_settings:
+                        navItemIndex=8;
+                        CURRENT_TAG=TAG_SETTINGS;
+                        break;
                     default:
                         navItemIndex = 0;
                 }

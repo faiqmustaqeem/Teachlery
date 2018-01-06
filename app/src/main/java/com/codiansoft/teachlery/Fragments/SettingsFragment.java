@@ -19,6 +19,8 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.codiansoft.teachlery.Activities.AboutUsActivity;
+import com.codiansoft.teachlery.Activities.ContactUsActivity;
+import com.codiansoft.teachlery.Activities.MainActivity;
 import com.codiansoft.teachlery.Activities.SignInActivity;
 import com.codiansoft.teachlery.Adapters.SettingsAdapter;
 import com.codiansoft.teachlery.Interfaces.RecyclerTouchListener;
@@ -56,6 +58,8 @@ public class SettingsFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
 
+        MainActivity.frameLayout.setVisibility(View.GONE);
+
         recyclerView=(RecyclerView)rootView.findViewById(R.id.recycle_view_settings);
         adapter=new SettingsAdapter(getItems());
 
@@ -74,12 +78,13 @@ public class SettingsFragment extends Fragment {
                        {
                            case 0:
 
-
+                               Intent i1=new Intent(getActivity() , ContactUsActivity.class);
+                                startActivity(i1);
 
                                break;
                            case 1:
-                               Intent i=new Intent(getActivity() , AboutUsActivity.class);
-                               startActivity(i);
+                               Intent i2=new Intent(getActivity() , AboutUsActivity.class);
+                               startActivity(i2);
                                break;
                            case 4:
                                new MaterialDialog.Builder(getActivity())
