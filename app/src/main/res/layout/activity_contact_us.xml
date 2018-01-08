@@ -36,7 +36,6 @@
             android:layout_width="0dp"
             android:layout_weight="4"
             android:textColor="@color/textColorGray"
-            android:textColorHint="@color/textColorGray"
             android:hint="Full Name"
             android:backgroundTint="@color/textColorGray"
             android:layout_height="match_parent" />
@@ -62,7 +61,6 @@
             android:layout_weight="4"
             android:textColor="@color/textColorGray"
             android:hint="Email"
-            android:textColorHint="@color/textColorGray"
             android:backgroundTint="@color/textColorGray"
             android:layout_height="match_parent" />
 
@@ -85,7 +83,6 @@
             android:layout_weight="4"
             android:textColor="@color/textColorGray"
             android:hint="Subject"
-            android:textColorHint="@color/textColorGray"
             android:backgroundTint="@color/textColorGray"
             android:layout_height="match_parent" />
 
@@ -106,22 +103,22 @@
         android:background="@drawable/rounded_9">
 
         <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/appCompatEditText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#FFF8F8F9"
-            android:foreground="#FFF8F8F9"
-            android:hint="Your Message here ..."
-            android:gravity="top|left"
-            android:textColor="@color/textColorGray"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/transparent"
             android:backgroundTint="#FFF8F8F9"
-            android:layout_marginTop="0dp"/>
+            android:gravity="top|left"
+            android:hint="Your Message here ..."
+            android:textColor="@color/textColorGray" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="1.2"
         android:layout_marginTop="30dp"
         android:orientation="horizontal">
 

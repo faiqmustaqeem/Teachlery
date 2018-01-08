@@ -1,6 +1,7 @@
 package com.codiansoft.teachlery.Adapters;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +40,7 @@ public class BookingsAdapter extends RecyclerView.Adapter<BookingsAdapter.MyView
                         // name match condition. this might differ depending on your requirement
                         // here we are looking for name or phone number match
                         if (row.getCourse_name().toLowerCase().contains(charString.toLowerCase()) ) {
+                            Log.e("bookings_adapter",row.getCourse_name());
                             filteredList.add(row);
                         }
                     }
@@ -81,6 +83,7 @@ public class BookingsAdapter extends RecyclerView.Adapter<BookingsAdapter.MyView
     public BookingsAdapter(List<BookingsModel> bookingsModels)
     {
         this.bookingsModels=bookingsModels;
+        this.bookingsModelsFiltered=bookingsModels;
     }
 
 
@@ -95,16 +98,17 @@ public class BookingsAdapter extends RecyclerView.Adapter<BookingsAdapter.MyView
     @Override
     public void onBindViewHolder(BookingsAdapter.MyViewHolder holder, int position) {
 
-        holder.name.setText(bookingsModels.get(position).getName());
-        holder.course_name.setText(bookingsModels.get(position).getCourse_name());
-        holder.date.setText(bookingsModels.get(position).getDate());
-        holder.time.setText(bookingsModels.get(position).getTime());
-        holder.status.setText(bookingsModels.get(position).getStatus());
+        BookingsModel bookingsModel=bookingsModelsFiltered.get(position);
+        holder.name.setText(bookingsModel.getName());
+        holder.course_name.setText(bookingsModel.getCourse_name());
+        holder.date.setText(bookingsModel.getDate());
+        holder.time.setText(bookingsModel.getTime());
+        holder.status.setText(bookingsModel.getStatus());
 
     }
 
     @Override
     public int getItemCount() {
-        return bookingsModels.size();
+        return bookingsModelsFiltered.size();
     }
 }

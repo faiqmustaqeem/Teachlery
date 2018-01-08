@@ -19,6 +19,7 @@
                 android:layout_height="wrap_content"
                 android:background="?attr/colorPrimary"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
+                android:textAlignment="center"
                 >
             </android.support.v7.widget.Toolbar>
 
@@ -26,7 +27,7 @@
     android:id="@+id/searchLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:visibility="gone">
+    android:visibility="visible">
 
 
     <EditText
@@ -36,6 +37,9 @@
         android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:hint="Filter"
+        android:textColor="@color/textColorGray"
+        android:textColorHint="@color/textColorGray"
         android:background="@android:color/white"/>
 
     <Spinner

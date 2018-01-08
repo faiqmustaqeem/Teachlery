@@ -25,6 +25,7 @@ import com.codiansoft.teachlery.Fragments.BookingsFragment;
 import com.codiansoft.teachlery.Fragments.DashboardFragment;
 import com.codiansoft.teachlery.Fragments.SettingsFragment;
 import com.codiansoft.teachlery.R;
+import android.support.v7.widget.SearchView;
 
 public class MainActivity extends AppCompatActivity
          {
@@ -36,7 +37,8 @@ public class MainActivity extends AppCompatActivity
     //private ImageView imgNavHeaderBg, imgProfile;
    // private TextView txtName, txtWebsite;
     public static Toolbar toolbar;
-//    public static EditText searchBar;
+
+    public static EditText searchBar;
     private FloatingActionButton fab;
     // index to identify current nav menu item
     public static int navItemIndex = 0;
@@ -71,9 +73,9 @@ public class MainActivity extends AppCompatActivity
         activity=this;
          toolbar =  findViewById(R.id.toolbar);
         frameLayout=findViewById(R.id.searchLayout);
+        frameLayout.setVisibility(View.GONE);
+        searchBar=findViewById(R.id.searchBar);
 
-//        searchBar=findViewById(R.id.searchBar);
-       // searchBar.setVisibility(View.GONE);
         setSupportActionBar(toolbar);
         mHandler = new Handler();
 
@@ -88,6 +90,7 @@ public class MainActivity extends AppCompatActivity
         });
 
          drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
 //        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
 //                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
 //        drawer.setDrawerListener(toggle);
@@ -337,9 +340,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }
