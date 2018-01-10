@@ -59,9 +59,11 @@ public class BookingsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_bookings, container, false);
 
         MainActivity.frameLayout.setVisibility(View.VISIBLE);
+        MainActivity.searchBar.setHint("Filter");
+
 
         recyclerView=view.findViewById(R.id.bookingsRecycleView);
-        adapter=new BookingsAdapter(getBookings());
+        adapter=new BookingsAdapter(getBookings() , getContext());
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

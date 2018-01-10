@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.AppCompatEditText;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.codiansoft.teachlery.R;
 
@@ -15,6 +16,7 @@ public class SignInActivity extends AppCompatActivity {
     AppCompatEditText email , password;
     Button btnSignin;
     Activity activity;
+    TextView register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,7 @@ public class SignInActivity extends AppCompatActivity {
         password=findViewById(R.id.password);
 
         btnSignin=findViewById(R.id.btn_sign_in);
+        register=findViewById(R.id.register);
 
         btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +41,13 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
-
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(activity , SignUpActivity.class);
+                startActivity(i);
+            }
+        });
 
     }
 }

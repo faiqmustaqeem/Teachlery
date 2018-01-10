@@ -5,4 +5,7 @@
     <color name="colorPrimaryLight">#b07cad</color>
     <color name="colorAccent">#b07cad</color>
     <color name="textColorGray">#5d5f79</color>
+
+    <color name="gray">#8d8d8d</color>
+    <color name="red">#c10c10</color>>
 </resources>

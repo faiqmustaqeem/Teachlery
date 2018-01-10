@@ -19,15 +19,17 @@
     <LinearLayout
         android:id="@+id/email_layout"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginRight="20dp"
         android:orientation="horizontal"
         android:weightSum="5"
-        android:layout_below="@id/logo">
+        android:layout_below="@+id/logo"
+        android:layout_alignStart="@+id/password_layout">
 
 <ImageView
+    android:layout_marginTop="8dp"
     android:layout_width="0dp"
     android:layout_height="20dp"
     android:src="@drawable/email"
@@ -50,7 +52,7 @@
     <LinearLayout
         android:id="@+id/password_layout"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -62,6 +64,7 @@
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:src="@drawable/key"
+            android:layout_marginLeft="5dp"
             android:layout_weight="1"/>
 
         <android.support.v7.widget.AppCompatEditText
@@ -70,7 +73,6 @@
             android:layout_height="match_parent"
             android:layout_weight="4"
             android:textColor="@android:color/white"
-
             android:textColorHint="@android:color/white"
             android:hint="Password"
             android:backgroundTint="#02cdd3"/>
@@ -104,16 +106,29 @@
     android:text="Forget Password ?"/>
 
 
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_forget_password"
+        android:textColor="#02cdd3"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:clickable="true"
+        android:layout_centerHorizontal="true"
+        android:text="Click here if you are a new user"/>
+
+
    <LinearLayout
        android:id="@+id/divider"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:orientation="horizontal"
-       android:layout_marginTop="30dp"
+       android:layout_marginTop="20dp"
        android:layout_marginLeft="20dp"
        android:layout_marginRight="20dp"
        android:weightSum="5"
-       android:layout_below="@+id/tv_forget_password"
+       android:layout_below="@+id/register"
        android:layout_alignStart="@+id/password_layout">
 
        <View

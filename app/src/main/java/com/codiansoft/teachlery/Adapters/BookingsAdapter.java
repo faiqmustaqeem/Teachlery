@@ -1,5 +1,7 @@
 package com.codiansoft.teachlery.Adapters;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,6 +11,7 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
 
+import com.codiansoft.teachlery.Activities.BookingDetailsActivity;
 import com.codiansoft.teachlery.Models.BookingsModel;
 import com.codiansoft.teachlery.R;
 
@@ -24,6 +27,7 @@ public class BookingsAdapter extends RecyclerView.Adapter<BookingsAdapter.MyView
 
     List<BookingsModel> bookingsModels;
     List<BookingsModel> bookingsModelsFiltered;
+    Context context;
 
     @Override
     public Filter getFilter() {
@@ -80,10 +84,11 @@ public class BookingsAdapter extends RecyclerView.Adapter<BookingsAdapter.MyView
 
         }
     }
-    public BookingsAdapter(List<BookingsModel> bookingsModels)
+    public BookingsAdapter(List<BookingsModel> bookingsModels , Context context)
     {
         this.bookingsModels=bookingsModels;
         this.bookingsModelsFiltered=bookingsModels;
+        this.context=context;
     }
 
 
@@ -104,6 +109,15 @@ public class BookingsAdapter extends RecyclerView.Adapter<BookingsAdapter.MyView
         holder.date.setText(bookingsModel.getDate());
         holder.time.setText(bookingsModel.getTime());
         holder.status.setText(bookingsModel.getStatus());
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(context , BookingDetailsActivity.class);
+                context.startActivity(i);
+            }
+        });
 
     }
 

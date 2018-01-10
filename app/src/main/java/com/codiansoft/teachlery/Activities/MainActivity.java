@@ -22,8 +22,12 @@ import android.widget.FrameLayout;
 
 
 import com.codiansoft.teachlery.Fragments.BookingsFragment;
+import com.codiansoft.teachlery.Fragments.ConversionRequestFragment;
+import com.codiansoft.teachlery.Fragments.CourseFragment;
 import com.codiansoft.teachlery.Fragments.DashboardFragment;
+import com.codiansoft.teachlery.Fragments.LeadsFragment;
 import com.codiansoft.teachlery.Fragments.SettingsFragment;
+import com.codiansoft.teachlery.Fragments.TutorsFragment;
 import com.codiansoft.teachlery.R;
 import android.support.v7.widget.SearchView;
 
@@ -53,6 +57,7 @@ public class MainActivity extends AppCompatActivity
     private static final String TAG_COURSES_CATEGORIES = "courses categories";
     private static final String TAG_CREDIT_CONVERSION_REQUEST = "credit conversion request";
     private static final String TAG_SETTINGS = "settings";
+    private static final String TAG_TUTORS = "tutors";
 
     public static FrameLayout frameLayout;
 
@@ -80,14 +85,14 @@ public class MainActivity extends AppCompatActivity
         mHandler = new Handler();
 
 
-        fab =  findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+       // fab =  findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
          drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
@@ -150,7 +155,7 @@ public class MainActivity extends AppCompatActivity
             drawer.closeDrawers();
 
             // show or hide the fab button
-            toggleFab();
+            //toggleFab();
             return;
         }
 
@@ -177,7 +182,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         // show or hide the fab button
-        toggleFab();
+       // toggleFab();
 
         //Closing drawer on item click
         drawer.closeDrawers();
@@ -195,10 +200,21 @@ public class MainActivity extends AppCompatActivity
             case 1:
                 BookingsFragment bookingsFragment=new BookingsFragment();
                 return bookingsFragment;
-
+            case 4:
+                LeadsFragment leadsFragment=new LeadsFragment();
+                return leadsFragment;
+            case 5:
+                CourseFragment courseFragment=new CourseFragment();
+                return courseFragment;
+            case 7:
+                ConversionRequestFragment conversionRequestFragment=new ConversionRequestFragment();
+                return conversionRequestFragment;
             case 8:
                 SettingsFragment settingsFragment = new SettingsFragment();
                 return settingsFragment;
+            case 9:
+                TutorsFragment tutorsFragment=new TutorsFragment();
+                return tutorsFragment;
 
             default:
                 return new DashboardFragment();
@@ -234,18 +250,22 @@ public class MainActivity extends AppCompatActivity
                         navItemIndex = 1;
                         CURRENT_TAG = TAG_BOOKINGS;
                         break;
-//                    case R.id.nav_movies:
-//                        navItemIndex = 2;
-//                        CURRENT_TAG = TAG_MOVIES;
-//                        break;
-//                    case R.id.nav_notifications:
-//                        navItemIndex = 3;
-//                        CURRENT_TAG = TAG_NOTIFICATIONS;
-//                        break;
+
                     case R.id.nav_leads:
                         navItemIndex = 4;
                         CURRENT_TAG = TAG_LEADS;
                         break;
+
+                    case R.id.nav_courses:
+                        navItemIndex = 5;
+                        CURRENT_TAG = TAG_COURSES;
+                        break;
+
+                    case R.id.nav_credit_conversion_request:
+                        navItemIndex = 7;
+                        CURRENT_TAG = TAG_CREDIT_CONVERSION_REQUEST;
+                        break;
+
 //                    case R.id.nav_about_us:
 //                        // launch new intent instead of loading fragment
 //                        startActivity(new Intent(MainActivity.this, AboutUsActivity.class));
@@ -259,6 +279,10 @@ public class MainActivity extends AppCompatActivity
                     case R.id.nav_settings:
                         navItemIndex=8;
                         CURRENT_TAG=TAG_SETTINGS;
+                        break;
+                    case R.id.nav_tutors:
+                        navItemIndex=9;
+                        CURRENT_TAG=TAG_TUTORS;
                         break;
                     default:
                         navItemIndex = 0;
@@ -350,9 +374,9 @@ public class MainActivity extends AppCompatActivity
 
     // show or hide the fab
     private void toggleFab() {
-        if (navItemIndex == 0)
-            fab.show();
-        else
-            fab.hide();
+//        if (navItemIndex == 1)
+//            fab.show();
+//        else
+//            fab.hide();
     }
 }

@@ -12,8 +12,16 @@
     <item>"Courses Categories"</item>
     <item>"Credit Conversion Request"</item>
     <item>"Settings"</item>
+    <item>"Tutors"</item>
 
 </array>
+
+    <array name="regsiter_as_items">
+
+        <item>Student</item>
+        <item>Tutor</item>
+        <item>Institute</item>
+    </array>
 
 
 </resources>
