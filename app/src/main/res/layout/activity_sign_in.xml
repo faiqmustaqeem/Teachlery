@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -170,30 +169,24 @@
 
 
     <ImageView
+        android:id="@+id/facebook_logo"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_weight="1.5"
         android:clickable="true"
-
         android:src="@drawable/facebook_logo"/>
 
 
-    <ImageView
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:clickable="true"
-        android:src="@drawable/gmail"/>
 
 
 
     <ImageView
+        android:id="@+id/gmail"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_weight="1.5"
         android:clickable="true"
-
-        android:src="@drawable/gmail_plus"/>
+        android:src="@drawable/google"/>
 
 </LinearLayout>
 

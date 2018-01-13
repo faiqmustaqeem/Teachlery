@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Teachlery</string>
+    <string name="app_name">Teachlery Tutor</string>
     <string name="title_activity_main">MainActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -9,4 +9,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!--facebook login-->
+    <string name="facebook_app_id">261670791032858</string>
+    <string name="fb_login_protocol_scheme">fb261670791032858</string>
 </resources>

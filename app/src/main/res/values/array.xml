@@ -7,14 +7,12 @@
     <item>"Bookings"</item>
     <item>"Manage"</item>
     <item>"Account"</item>
-    <item>"Leads"</item>
     <item>"Courses"</item>
-    <item>"Courses Categories"</item>
     <item>"Credit Conversion Request"</item>
     <item>"Settings"</item>
-    <item>"Tutors"</item>
 
 </array>
+
 
     <array name="regsiter_as_items">
 

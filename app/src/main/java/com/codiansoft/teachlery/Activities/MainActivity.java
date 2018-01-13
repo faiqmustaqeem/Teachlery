@@ -32,7 +32,7 @@ import com.codiansoft.teachlery.R;
 import android.support.v7.widget.SearchView;
 
 public class MainActivity extends AppCompatActivity
-         {
+{
 
 
     private NavigationView navigationView;
@@ -52,12 +52,9 @@ public class MainActivity extends AppCompatActivity
     private static final String TAG_BOOKINGS = "bookings";
     private static final String TAG_MANAGE = "manage";
     private static final String TAG_ACCOUNT = "account";
-    private static final String TAG_LEADS = "leads";
     private static final String TAG_COURSES = "courses";
-    private static final String TAG_COURSES_CATEGORIES = "courses categories";
     private static final String TAG_CREDIT_CONVERSION_REQUEST = "credit conversion request";
     private static final String TAG_SETTINGS = "settings";
-    private static final String TAG_TUTORS = "tutors";
 
     public static FrameLayout frameLayout;
 
@@ -76,7 +73,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         activity=this;
-         toolbar =  findViewById(R.id.toolbar);
+        toolbar =  findViewById(R.id.toolbar);
         frameLayout=findViewById(R.id.searchLayout);
         frameLayout.setVisibility(View.GONE);
         searchBar=findViewById(R.id.searchBar);
@@ -169,15 +166,16 @@ public class MainActivity extends AppCompatActivity
                 // update the main content by replacing fragments
                 Fragment fragment = getHomeFragment();
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
-                        android.R.anim.fade_out);
+            //    fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
+              //          android.R.anim.fade_out);
                 fragmentTransaction.replace(R.id.frame, fragment, CURRENT_TAG);
                 fragmentTransaction.commitAllowingStateLoss();
             }
         };
 
         // If mPendingRunnable is not null, then add to the message queue
-        if (mPendingRunnable != null) {
+        if (mPendingRunnable != null)
+        {
             mHandler.post(mPendingRunnable);
         }
 
@@ -200,21 +198,17 @@ public class MainActivity extends AppCompatActivity
             case 1:
                 BookingsFragment bookingsFragment=new BookingsFragment();
                 return bookingsFragment;
+
             case 4:
-                LeadsFragment leadsFragment=new LeadsFragment();
-                return leadsFragment;
-            case 5:
                 CourseFragment courseFragment=new CourseFragment();
                 return courseFragment;
-            case 7:
+            case 5:
                 ConversionRequestFragment conversionRequestFragment=new ConversionRequestFragment();
                 return conversionRequestFragment;
-            case 8:
+            case 6:
                 SettingsFragment settingsFragment = new SettingsFragment();
                 return settingsFragment;
-            case 9:
-                TutorsFragment tutorsFragment=new TutorsFragment();
-                return tutorsFragment;
+
 
             default:
                 return new DashboardFragment();
@@ -251,18 +245,14 @@ public class MainActivity extends AppCompatActivity
                         CURRENT_TAG = TAG_BOOKINGS;
                         break;
 
-                    case R.id.nav_leads:
-                        navItemIndex = 4;
-                        CURRENT_TAG = TAG_LEADS;
-                        break;
 
                     case R.id.nav_courses:
-                        navItemIndex = 5;
+                        navItemIndex = 4;
                         CURRENT_TAG = TAG_COURSES;
                         break;
 
                     case R.id.nav_credit_conversion_request:
-                        navItemIndex = 7;
+                        navItemIndex = 5;
                         CURRENT_TAG = TAG_CREDIT_CONVERSION_REQUEST;
                         break;
 
@@ -277,13 +267,10 @@ public class MainActivity extends AppCompatActivity
 //                        drawer.closeDrawers();
 //                        return true;
                     case R.id.nav_settings:
-                        navItemIndex=8;
+                        navItemIndex=6;
                         CURRENT_TAG=TAG_SETTINGS;
                         break;
-                    case R.id.nav_tutors:
-                        navItemIndex=9;
-                        CURRENT_TAG=TAG_TUTORS;
-                        break;
+
                     default:
                         navItemIndex = 0;
                 }
